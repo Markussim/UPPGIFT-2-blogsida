@@ -7,4 +7,4 @@ steps:
     args: ["run", "build", "-w blog"]
   # Deploy
   - name: gcr.io/uppgift-2-blog/firebase
-    args: ["deploy"]
+    args: ["deploy", "--project=uppgift-2-blog"]
