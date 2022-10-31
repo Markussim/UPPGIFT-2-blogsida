@@ -1,6 +1,4 @@
 steps:
-  - name: "gcr.io/cloud-builders/cd"
-    args: ["./blog"]
   # Install
   - name: "gcr.io/cloud-builders/npm"
     args: ["install", "-w blog"]
