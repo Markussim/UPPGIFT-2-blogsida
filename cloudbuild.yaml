@@ -1,10 +1,12 @@
 steps:
+  - name: "gcr.io/cloud-builders/cd"
+    args: ["./blog"]
   # Install
   - name: "gcr.io/cloud-builders/npm"
-    args: ["install"]
+    args: ["install", "-w blog"]
   # Build
   - name: "gcr.io/cloud-builders/npm"
-    args: ["run", "build"]
+    args: ["run", "build", "-w blog"]
   # Deploy
   - name: gcr.io/project-id/firebase
     args: ["deploy"]
