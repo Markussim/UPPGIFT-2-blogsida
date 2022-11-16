@@ -1,24 +1,29 @@
-import logo from "./logo.svg";
-import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [data, setData] = useState([
+    { twoot: "Hello World", twootContent: "This is my first twoot", key: "1" },
+    { twoot: "Hello Pucko", twootContent: "This is my second twoot", key: "2" },
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload. Hello World!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Post a twoot</h1>
+      <input type="text" placeholder="Twoot" />
+      <input type="file" />
+      <button>Twoot</button>
+
+      <div className="twoots">
+        <div className="wrapper">
+          {data.map((twoot) => (
+            <div className="twoot" key={twoot.key}>
+              <h2>{twoot.twoot}</h2>
+              <p>{twoot.twootContent}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
   );
 }
 
