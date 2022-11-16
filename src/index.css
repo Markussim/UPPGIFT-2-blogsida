@@ -13,8 +13,7 @@ code {
 }
 
 .twoots {
-  scroll-snap-type: y;
-  overflow: scroll;
+  scroll-snap-type: y mandatory;
   height: 100vh;
 }
 
@@ -26,4 +25,5 @@ code {
   height: 100vh;
   background: #282c34;
   color: white;
+  scroll-snap-stop: always;
 }
